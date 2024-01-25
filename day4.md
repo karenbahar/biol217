@@ -19,17 +19,27 @@ conda activate anvio-8
 
 module load samtools
 samtools view -bS SAMPLE_BGR_130305.sam > SAMPLE_BGR_130305.bam
-
-module load samtools
 samtools view -bS SAMPLE_BGR_130527.sam > SAMPLE_BGR_130527.bam
-
-module load samtools
 samtools view -bS SAMPLE_BGR_130708.sam > SAMPLE_BGR_130708.bam
 ```
-Then, for contigs data preperation:
+Then, for contigs data preperation (inside sunam227.sh):
 ```
-anvi-gen-contigs-database -f contigs.anvio.fa -o contigs.db -n 'biol217'
+anvi-gen-contigs-database -f contigs.anvio.fa -o contigs.db -n biol217
 ```
-
-
+HMM SEARCH ON CONTIGS:
+```
 anvi-run-hmms -c contigs.db
+```
+(didn"t work, so recieved the pdf from outside)
+Next, we ran this for binning with anvio, after `scp` ing the .bam extension files into 5_anvio... folder:
+```
+for i in *.bam; do anvi-init-bam $i -o "$i".sorted.bam; done
+```
+Then, for anvio profiles, we ran these commands:
+"anvi-profile -i YOUR_SORTED.bam -c contigs.db --output-dir OUTPUT_DIR"
+so, the commands are:
+```
+anvi-profile -i BGR_130305.bam.sorted.bam -c contigs.db --output-dir anvioprof_output
+anvi-profile -i BGR_130527.bam.sorted.bam -c contigs.db --output-dir anvioprof_output
+anvi-profile -i BGR_130708.bam.sorted.bam -c contigs.db --output-dir anvioprof_output
+```
