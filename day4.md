@@ -62,3 +62,4 @@ conda activate anvio-8
 
 anvi-merge ./anvioprof_output/BGR_130305/PROFILE.db ./anvioprof_output/BGR_130527/PROFILE.db ./anvioprof_output/BGR_130708/PROFILE.db -o ./metabat_output -c . --enforce-hierarchical-clustering
 ```
+got the CC folder and ran maxbin.sh:
