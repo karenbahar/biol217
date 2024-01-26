@@ -44,9 +44,9 @@ gunc.sh
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=10G
 #SBATCH --time=5:00:00
-#SBATCH --job-name=gunc1
-#SBATCH --output=gunc1.out
-#SBATCH --error=gunc1.err
+#SBATCH --job-name=gunc3
+#SBATCH --output=gunc3.out
+#SBATCH --error=gunc3.err
 #SBATCH --partition=base
 #SBATCH --reservation=biol217
 
@@ -54,11 +54,12 @@ module load gcc12-env/12.1.0
 module load miniconda3/4.12.0
 conda activate gunc
 
-cd ./ARCHAEA_BIN_REFINEMENT
+cd $WORK/Metagenomics/CC/anvio_testing_follow_up/5_anvio_profiles/ARCHAEA_BIN REFINEMENT
 
 mkdir GUNC
 
 for i in *.fa; do gunc run -i "$i" -r /work_beegfs/sunam227/Databases/gunc_db_progenomes2.1.dmnd --out_dir GUNC/"$i" --threads 10 --detailed_output; done
 
-gunc plot -d ./GUNC/diamond_output/METABAT__#-contigs.diamond.progenomes_2.1.out -g ./GUNC/genes_calls/gene_counts.json
+#gunc plot -d ./GUNC/diamond_output/METABAT###-contigs.diamond.progenomes_2.1.out -g ./GUNC/genes_calls/gene_counts.json
 ```
+no gunc
