@@ -221,4 +221,29 @@ Bacteroides sp002491635
 user_genome	classification	fastani_reference	fastani_reference_radius	fastani_taxonomy	fastani_ani	fastani_af	closest_placement_reference	closest_placement_radius	closest_placement_taxonomy	closest_placement_ani	closest_placement_af	pplacer_taxonomy	classification_method	note	other_related_references(genome_id,species_name,radius,ANI,AF)	msa_percent	translation_table	red_value	warnings
 PROKKA_01282024	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Bacteroides;s__Bacteroides sp002491635	GCF_004793475.1	95.0	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Bacteroidales;f__Bacteroidaceae;g__Bacteroides;s__Bacteroides sp002491635	97.39	0.78	GCF_004793475.1	95.0	
 
-Ran panaroo
+Ran panaroo.sh
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --time=15:00:00
+#SBATCH --job-name=panaroo
+#SBATCH --output=panaroo.out
+#SBATCH --error=panaroo.err
+#SBATCH --partition=base
+#SBATCH --reservation=biol217
+
+module load micromamba/1.4.2
+export MAMBA_ROOT_PREFIX=$HOME/.micromamba
+eval "$(micromamba shell hook --shell=bash)"
+module load micromamba/1.4.2
+micromamba activate 08_panaroo
+#creata a folder for panaroo
+mkdir -p $WORK/pangenomics/01_panaroo
+# run panaroo
+panaroo -i $WORK/pangenomics/gffs/*.gff -o $WORK/pangenomics/01_panaroo/pangenomics_results --clean-mode strict -t 12
+
+
+micromamba deactivate
+module purge
+jobinfo
