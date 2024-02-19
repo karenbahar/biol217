@@ -30,7 +30,7 @@ HMM SEARCH ON CONTIGS:
 ```
 anvi-run-hmms -c contigs.db
 ```
-(didn"t work, so recieved the pdf from outside)
+
 Next, we ran this for binning with anvio, after `scp` ing the .bam extension files into 5_anvio... folder:
 ```
 for i in *.bam; do anvi-init-bam $i -o "$i".sorted.bam; done
@@ -62,7 +62,7 @@ conda activate anvio-8
 
 anvi-merge ./anvioprof_output/BGR_130305/PROFILE.db ./anvioprof_output/BGR_130527/PROFILE.db ./anvioprof_output/BGR_130708/PROFILE.db -o ./metabat_output -c . --enforce-hierarchical-clustering
 ```
-got the CC folder and ran maxbin.sh:
+moved to CC folder and ran maxbin.sh:
 ```
 #!/bin/bash
 #SBATCH --nodes=1
@@ -150,7 +150,7 @@ conda activate anvio-8
 
 anvi-merge ./anvioprof_output/BGR_130305/PROFILE.db ./anvioprof_output/BGR_130527/PROFILE.db ./anvioprof_output/BGR_130708/PROFILE.db -o ./metabat_output -c . --enforce-hierarchical-clustering
 ```
-got the CC folder and ran maxbin.sh:
+moved to CC folder and ran maxbin.sh:
 ```
 #!/bin/bash
 #SBATCH --nodes=1
