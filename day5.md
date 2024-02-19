@@ -19,7 +19,7 @@ conda activate anvio-8
 
 anvi-summarize -p ./5_anvio_profiles/merged_profiles/PROFILE.db -c ./4_mapping/contigs.db --list-collections
 ```
-AND BY .SH I MEANT THE CODE ON TERMINAL. THE ONE STARTING WITH ANVI-SUMMARIZE.
+.SH CODE RAN ON TERMINAL. (ANVI-SUMMARIZE)
 
 then:
 ```
@@ -62,4 +62,4 @@ for i in *.fa; do gunc run -i "$i" -r /work_beegfs/sunam227/Databases/gunc_db_pr
 
 #gunc plot -d ./GUNC/diamond_output/METABAT###-contigs.diamond.progenomes_2.1.out -g ./GUNC/genes_calls/gene_counts.json
 ```
-no gunc
+no gunc results obtained.
