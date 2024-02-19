@@ -18,7 +18,7 @@ THEN, WE CREATE A NEW FOLDER.
 (reademption) [sunam227@caucluster1 RNAseq]$ 
 ```
 --------------
-I ran the grep commands again because I accidentally deleted the things.
+I ran the grep commands again.
 --------------
     2. copy the reference genome and annotation files to the input folder
 
