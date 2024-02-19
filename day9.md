@@ -89,7 +89,7 @@ we created a new directory but the new file is KAREN2 again.
 "what is tnoar?"
 a question you should answer in the protocol
 
-WE HAVE GOT THE RNASEQ RESULTS FROM MUHAMMAD.
+
 screenshots of the possible upregulated and downregulated genes were taken.
 
 R:
